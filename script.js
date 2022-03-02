@@ -59,7 +59,7 @@ function createTicket(ticketColor, ticketTask, ticketID) {
     let ticketcont = document.createElement("div");
     ticketcont.setAttribute("class", "ticket-cont");
     ticketcont.innerHTML = `<div class="ticket-cont">
-    <div class="${ticketColor} ticket-color"></div>
+    <div class=" ticket-color ${ticketColor}"></div>
     <div class="ticket-id">#${ticketID}</div>
     <div class="task-area">${ticketTask}</div>
     <div class="ticket-lock">
@@ -96,18 +96,27 @@ function handleLock(ticket) {
     })
 }
 
-function handleColor(ticket) {
+
+function handleColor(ticket, id) {
     let ticketColor = ticket.querySelector(".ticket-color");
     ticketColor.addEventListener("click", (e) => {
-        let currentTicketColor = ticketColor.classList[0];
-        // get ticket color idx 
+        // Get ticketIdx from the tickets array
+        // let ticketIdx = getTikcetIdx(id);
+
+        let currentTicketColor = ticketColor.classList[1];
+        // Get ticket color idx
         let currentTicketColorIdx = colors.findIndex((color) => {
-            return currentTicketColor === color
+            return currentTicketColor === color;
         })
         currentTicketColorIdx++;
+        console.log(currentTicketColor, currentTicketColorIdx);
         let newTicketColorIdx = currentTicketColorIdx % colors.length;
         let newTicketColor = colors[newTicketColorIdx];
-        ticketColor.classList.remove(currentTicketColor);
         ticketColor.classList.add(newTicketColor);
+        ticketColor.classList.remove(currentTicketColor);
+
+        // Modify data in localStorage (priority color change)
+        // ticketsArr[ticketIdx].ticketColor = newTicketColor;
+        // localStorage.setItem("jira_tickets", JSON.stringify(ticketsArr));
     })
 }
