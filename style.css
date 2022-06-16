@@ -1,151 +1,139 @@
-* {
+*{
     box-sizing: border-box;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
-body {
+body{
     margin: 0;
     padding: 0;
-    background-color: #f5f6fa;
 }
 
-.toolbox-cont {
+.toolbox-cont{
     height: 5rem;
     background-color: #4b4b4b;
     display: flex;
     align-items: center;
 }
-
-.toolbox-cont>* {
+.toolbox-cont > *{
     margin-left: 4rem;
     border-radius: 2px;
 }
-
-.toolbox-priority-cont {
+.toolbox-priority-cont{
     height: 3.5rem;
-    width: 14rem;
+    width: 16rem;
     background-color: #3d3d3d;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-
-.action-btn-cont {
+.action-btn-cont{
     height: 3.5rem;
-    width: 6rem;
+    width: 8rem;
     background-color: #3d3d3d;
     display: flex;
 }
-
-.action-btn-cont>* {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    font-size: 2rem;
-    color: #d1d8e0;
+.action-btn-cont>*{
+display: flex;
+width: 50%;
+justify-content: center;
+align-items: center;
+font-size: 2rem;
+color: #dcdde1;
 }
 
-.color {
+.color{
     height: 1.2rem;
-    width: 2rem;
+    width: 2.5rem;
     background-color: lightsalmon;
     border-radius: 2px;
 }
 
-.lightpink {
+.lightpink{
     background-color: lightpink;
 }
-
-.lightgreen {
-    background-color: lightgreen;
-}
-
-.lightblue {
+.lightblue{
     background-color: lightblue;
 }
-
-.black {
+.lightgreen{
+    background-color: lightgreen;
+}
+.black{
     background-color: black;
 }
 
-.action-btn-cont>*:hover {
+.action-btn-cont>*:hover{
     background-color: #485460;
 }
 
-.modal-cont {
+.modal-cont{
     height: 50vh;
     width: 45vw;
-    background: lightblue;
+    background-color: lightskyblue;
     position: absolute;
-    top: calc( ( 100vh - 50vh) / 2);
-    left: calc( ( 100vw - 45vw) / 2);
+    /* top: calc((60%)/2);
+    left: calc((60%)/2); */
+    top: calc( ( 100vh - 50vh ) / 2 );
+    left: calc( ( 100vw - 45vw ) / 2 );
     display: none;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
-
-.textarea-cont {
+.textarea-cont{
     height: 100%;
     width: 75%;
     border: none;
     outline: none;
+    background-color: #d2dae2;
     resize: none;
-    background-color: #dfe4ea;
     padding: 2rem;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
-
-.priority-colors-cont {
+.priority-colors-cont{
     height: 100%;
     width: 25%;
+    background-color: #4b4b4b;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: #4b4b4b;
 }
-
-.priority-color {
+.priority-color{
     height: 3rem;
     width: 55%;
 }
 
-.border {
-    border: 5px solid #d1d8e0;
+.border{
+    border: 5px solid #a5b1c2;
 }
-
-.ticket-cont {
+.ticket-cont{
     height: 13rem;
-    width: 16rem;
+    width: 14rem;
     background-color: #f1f2f6;
 }
-
-.ticket-color {
+.ticket-color{
     height: 1rem;
+    /* background-color: lightpink; */
 }
-
-.ticket-id {
+.ticket-id{
     height: 2rem;
+    /* background-color: lightgreen; */
     padding: 0.4rem;
 }
-
-.task-area {
-    height: calc( 100% - 1rem - 2rem - 2rem);
+.task-area{
+    /* height: calc(75%); */
+    height: calc(100% - 1rem - 2rem - 2rem);
+    /* background-color: lightsalmon; */
     padding: 0.4rem;
     outline: none;
-    font-size: 1.3rem;
 }
-
-.ticket-lock {
+.ticket-lock{
     height: 2rem;
+    /* background-color: lightblue; */
     display: flex;
     font-size: 1.5rem;
     padding-right: 1rem;
     justify-content: flex-end;
-    color: #a5b1c2;
+    color: #a4b0be;
 }
-
-.main-cont {
+.main-cont{
     display: flex;
     flex-wrap: wrap;
     padding: 2rem;
@@ -153,19 +141,19 @@ body {
     justify-content: center;
 }
 
-@media screen and (min-width: 425px) and (max-width: 768px) {
-    .modal-cont {
+@media screen and (min-width:425px) and (max-width:768px){
+    .modal-cont{
         width: 60vw;
-        left: calc( ( 100vw - 60vw) / 2);
+        left: calc( ( 100vw - 60vw ) / 2 );
     }
 }
 
-@media screen and (max-width: 426px) {
+@media screen and (max-width:425px){
     .modal-cont {
         width: 75vw;
         height: 55vh;
-        top: calc( ( 100vh - 55vh) / 2);
-        left: calc( ( 100vw - 75vw) / 2);
+        top: calc( ( 100vh - 55vh ) / 2 );
+        left: calc( ( 100vw - 75vw ) / 2 );
         flex-direction: column;
     }
     .textarea-cont {
@@ -180,8 +168,8 @@ body {
     .priority-color {
         width: 17%;
     }
-    .toolbox-cont>* {
-        margin-left: 2rem;
+    .toolbox-cont > * {
+        margin-left: 0.8rem;
         border-radius: 2px;
     }
 }
